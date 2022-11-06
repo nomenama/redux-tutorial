@@ -5,7 +5,9 @@ import {setUser} from "../../ducks/user";
 
 export function* handleFetchUser(action: ReducerAction<any>): any {
     try {
-        const response = yield call(fetchUser);
+        const randomId = Math.floor(Math.random() * 10) + 1;
+
+        const response = yield call(() => fetchUser(randomId));
         const {data} = response;
 
         yield put(setUser(data));
