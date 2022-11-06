@@ -6,7 +6,7 @@ const Header = () => {
     const dispatch = useDispatch();
     // @ts-ignore
     const user = useSelector((state) => state.user.user);
-    const {name} = user;
+
 
     useEffect(() => {
         void dispatch(getUser());
@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <div className="header">
-            <h3>Welcome: {name}</h3>
+            <h3>Welcome: {user?.name}</h3>
         </div>
     );
 };

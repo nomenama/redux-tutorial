@@ -3,10 +3,12 @@ import createSagaMiddleware from "redux-saga";
 import {watcherSaga} from "./sagas/rootSaga";
 import counterReducer from "./ducks/counter";
 import userReducer from "./ducks/user";
+import postReducer from "./ducks/post";
 
 const reducer = combineReducers({
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    post: postReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();
