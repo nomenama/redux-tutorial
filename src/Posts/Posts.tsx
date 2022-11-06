@@ -16,9 +16,9 @@ const Posts = () => {
         <div>
             <h1>Posts</h1>
             <div className="postContainer">
-                {Boolean(posts?.length) && (
+                {Boolean(posts?.length) ? (
                     posts.map((post: any) => <Post key={post.body} title={post.title} body={post.body}/>)
-                )}
+                ) : <h4 style={{width: "100%", textAlign: "center"}}>Loading ...</h4>}
             </div>
         </div>
 
